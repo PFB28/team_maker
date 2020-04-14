@@ -1,0 +1,16 @@
+<div class="cards">
+  <%= link_to new_game_path, :action => 'go' do %>
+  <div class="card-category" >
+  <%= image_tag "https://img.favpng.com/13/19/24/computer-icons-plus-sign-desktop-wallpaper-png-favpng-CUnZ60JfnrAB29fDkmWqFiknj.jpg", class: "avatar-large", alt: "avatar-large" %>
+  </div>
+  <% end %>
+  <% @games.each do |game| %>
+    <%= link_to game, :action => 'go' do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.journaldugeek.com/content/uploads/2020/03/call-of-duty-warzone-couverture-astuce-tt-width-620-height-292-fill-1-crop-1-bgcolor-000000.jpg)">
+        <h2><%= game.software %></h2>
+        <h4><%= game.start_time %></h4>
+        <h3><%= game.user.pseudo %></h3>
+      </div>
+    <% end %>
+  <% end %>
+</div>
